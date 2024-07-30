@@ -1,11 +1,9 @@
-#!/data/data/com.termux/files/usr/bin/env python3
-
 def encriptar(mensaje, clave):
     mensaje_encriptado = ""
     for i in range(len(mensaje)):
         char = mensaje[i]
         if char == ' ':
-            mensaje_encriptado += ' '  # Mantener los espacios sin encriptar
+            mensaje_encriptado += ' '
             continue
         clave_char = clave[i % len(clave)]
         mensaje_encriptado += chr((ord(char) + ord(clave_char)) % 256)
@@ -16,7 +14,7 @@ def desencriptar(mensaje_encriptado, clave):
     for i in range(len(mensaje_encriptado)):
         char = mensaje_encriptado[i]
         if char == ' ':
-            mensaje_original += ' '  # Mantener los espacios sin encriptar
+            mensaje_original += ' ' 
             continue
         clave_char = clave[i % len(clave)]
         mensaje_original += chr((ord(char) - ord(clave_char)) % 256)
